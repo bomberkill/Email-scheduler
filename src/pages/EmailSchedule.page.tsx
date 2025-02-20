@@ -74,7 +74,7 @@ export default function EmailScheduler () {
       setIsSubmitting(true);
       const { minute, hour } = scheduleForm.values;
       try {
-        const response = await axios.post("https://email-scheduler-api-is7r.onrender.com:3000", {
+        const response = await axios.post("https://email-scheduler-api-is7r.onrender.com/", {
           to: scheduleForm.values.to,
           subject: scheduleForm.values.subject,
           text: scheduleForm.values.text,
