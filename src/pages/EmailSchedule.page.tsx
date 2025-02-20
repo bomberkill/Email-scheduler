@@ -83,7 +83,7 @@ export default function EmailScheduler () {
             minute,
             hour,
             dayOfWeek: selectedDays.length > 0 ? selectedDays.join(",") : "*",
-            timeZone
+            tz: timeZone
           },
         });
   
