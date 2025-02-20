@@ -73,6 +73,7 @@ export default function EmailScheduler () {
     const handleSubmit = async () => {
       setIsSubmitting(true);
       const { minute, hour } = scheduleForm.values;
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       try {
         const response = await axios.post("https://email-scheduler-api-production.up.railway.app/schedule-email", {
           to: scheduleForm.values.to,
@@ -82,6 +83,7 @@ export default function EmailScheduler () {
             minute,
             hour,
             dayOfWeek: selectedDays.length > 0 ? selectedDays.join(",") : "*",
+            timeZone
           },
         });
   
