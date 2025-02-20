@@ -74,7 +74,7 @@ export default function EmailScheduler () {
       setIsSubmitting(true);
       const { minute, hour } = scheduleForm.values;
       try {
-        const response = await axios.post("https://email-scheduler-api-production.up.railway.app/", {
+        const response = await axios.post("https://email-scheduler-api-production.up.railway.app/schedule-email", {
           to: scheduleForm.values.to,
           subject: scheduleForm.values.subject,
           text: scheduleForm.values.text,
